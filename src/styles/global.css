@@ -1,0 +1,64 @@
+@import url(./color.css);
+@font-face {
+    font-family: "IBM-FONT";
+    src: local("IBM-FONT"),
+      url(../fonts/IBMPlexSansCondensed-Regular.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "Harmony";
+    src: local("Harmony"),
+      url(../fonts/HarmonyOS_Sans_Bold.woff2) format("truetype");
+  }
+  @font-face {
+    font-family: "Harmony-medium";
+    src: local("Harmony"),
+      url(../fonts/HarmonyOS_Sans_Medium.woff2) format("truetype");
+  }
+  @font-face {
+    font-family: "Binance-medium";
+    src: local("Binance"),
+      url(../fonts/BinancePlex-Regular.otf) format("truetype");
+  }
+  @font-face {
+    font-family: "Binance-bold";
+    src: local("Binance"),
+      url(../fonts/BinancePlex-SemiBold.otf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "IconFont";
+    src: local("IconFont"),
+      url(../fonts/iconfont-OKX-header-footer.woff2) format("truetype");
+  }
+  
+  body {
+    background-color: #000 !important;
+    font-family: "IBM-FONT" !important;
+  }
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.App{
+    background-color: #0B0E11;
+    
+}
+.action-link{
+    color:var(--green);
+    text-decoration:none;
+    font-size:15px;
+    margin-right:20px;
+}
+button.btn[disabled] {
+    background-color: #ddd;
+    color: #555;
+    border: none;
+
+}
+body a{ 
+    text-decoration: none !important;
+    color: inherit;
+}
