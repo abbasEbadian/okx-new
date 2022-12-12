@@ -243,9 +243,9 @@ export default function EnhancedTable({ estimated, search, hide }) {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <Box className="px-3 mb-5 py-5" color={'dark'}>
-      <Paper color="dark" >
-        <TableContainer color='dark'>
+    <Box className="px-3 mb-5 py-5">
+      
+        <TableContainer >
           <Table aria-labelledby="tableTitle" size={dense ? "small" : "medium"} >
             <EnhancedTableHead
               numSelected={selected.length}
@@ -297,9 +297,9 @@ export default function EnhancedTable({ estimated, search, hide }) {
                       <TableCell align="right">{estimated? "****************":row.btc}</TableCell>
                       <TableCell align="right">
                         <div className="action-item d-flex align-items-center justify-content-start ">
-                          <Link className="action-link ">Deposit</Link>
-                          <Link className="action-link ">Withdraw</Link>
-                          <Link className="action-link ">Trade</Link>
+                          <Link className="action-link " to="/wallet/deposit">Deposit</Link>
+                          <Link className="action-link " to="/wallet/withdraw">Withdraw</Link>
+                          <Link className="action-link " to="/trade">Trade</Link>
                         </div>
                       </TableCell>
                     </TableRow>
@@ -317,17 +317,8 @@ export default function EnhancedTable({ estimated, search, hide }) {
             </TableBody>
           </Table>
         </TableContainer>
-        {/* <TablePagination
-          rowsPerPageOptions={[5, 10, 25]}
-          component="div"
-          count={rows.length}
-          rowsPerPage={rowsPerPage}
-          page={page}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
-        /> */}
+        
         <PaginationWallet />
-      </Paper>
     </Box>
   );
 }

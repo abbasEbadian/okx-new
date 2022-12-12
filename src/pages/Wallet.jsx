@@ -3,15 +3,17 @@ import Styled from '@emotion/styled'
 import Header from '../components/Header'
 import SidebarWallet from '../components/SubWallet/SidebarWallet'
 import ContentWallet from '../components/SubWallet/ContentWallet'
+import WalletDrawer from '../components/SubWallet/WalletDrawer'
 const WalletBody = Styled.div`
     display:flex;
 `
 function Wallet() {
   return (
     <>
-        <Header/>
+        
         <WalletBody>
-            <SidebarWallet/>
+            {/* <SidebarWallet/> */}
+            <WalletDrawer />
             <ContentWallet/>
         </WalletBody>
     </>

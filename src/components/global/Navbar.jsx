@@ -129,7 +129,7 @@ export default function Navbar({ open }) {
             {location.pathname != '/trade' && <Link className="logo" style={{ marginRight: '15px' }} onClick={handleClick(wallet)}>Wallet <ArrowDropDownIcon /></Link>}
             {location.pathname != '/trade' && <Link className="logo" style={{ marginRight: '15px' }} onClick={handleClick(orders)} to="orders">Orders <ArrowDropDownIcon /></Link>}
             <Link className='logo' to="/auth/login">log in</Link>
-            <Button variant="contained" color="light" className="spacial" component={Link} to="/signup" sx={{ mx: '15px', color: "#000", fontWeight: "bold" }}>sign up</Button>
+            <Button variant="contained" color="light" className="spacial" component={Link} to="/auth/signup" sx={{ mx: '15px', color: "#000", fontWeight: "bold" }}>sign up</Button>
           </Box>
           <IconButton>
             <DarkMode sx={{ color: "white" }} />

@@ -1,25 +1,28 @@
 import { createTheme } from '@mui/material/styles';
-const { palette } = createTheme();
-const { augmentColor } = palette;
-const createColor = (mainColor) => augmentColor({ color: { main: mainColor } });
+
+const GRAY = "#161515"
+
 
 export const  Theme = createTheme({
   palette: {
     mode: 'dark',
+    background: {
+        default: GRAY,
+    },
     golding:{
         main:"#e5c233",
         contrastText:"#000"
     },
     dark:{
-        main:"rgb(15, 15, 15)",
+        main:"rgb(16, 15, 15)",
         contrastText:"#fff"
     },
     light:{
         main:"#fff",
-        contrastText:"#000"
+        contrastText:"#000",
     },
     primary:{
-        main:"#009688",
+        main:GRAY,
         contrastText:"#fff"
     },
     secondary:{
@@ -39,8 +42,8 @@ export const  Theme = createTheme({
         contrastText:"#000"
     },
     grey:{
-        main:"rgb(128, 128, 128)",
-        contrastText:"#000"
+        main:"rgb(40, 40, 40)",
+        contrastText:"#fff",
     },
     greycolor:{
         main:"rgb(132, 142, 156)",
@@ -66,13 +69,51 @@ export const  Theme = createTheme({
         main: "#0ead98",
         contrastText: "#fff"
     },
+    action: {
+        hoverOpacity: 0,
+        hover: "rgba(255,255,0,0)"
+    },
+   contrastThreshold: 4,
+   tonalOffset: 1   
+
 
   },
   components:{
      MuiButton:{
         styleOverrides:{
+            root: ({ ownerState }) => ({
+                ...(ownerState.variant === 'outlined' &&
+                  ownerState.color === 'light' && {
+                    "&:hover": {
+                        background: '#fff',
+                        color: '#111',
+                    },
+                    background: 'rgba(0,0,0,0)'
+                  }),
+                  ...(ownerState.variant === 'text' &&
+                  ownerState.color === 'grey' && {
+                    
+                    "&:hover": {
+                        color: '#fff',
+                    }
+                  }),
+                  textTransform: 'none',
+                  ...(ownerState.variant === 'outlined' &&
+                  ownerState.color === 'grey' && {
+                    color: "#888",
+                    "&:hover": {
+                        color: '#fff',
+                    }
+                  }),
+              }),
+        },
+        
+     },
+     MuiPaper:{
+        styleOverrides:{
             root:{
-                textTransform:"none"
+                background: GRAY,
+                
             }
         }
      },
@@ -82,7 +123,7 @@ export const  Theme = createTheme({
                 textTransform:"none",
                 '&.Mui-selected':{
                     color:"#fff",
-                    backgroundColor:"#161515",
+                    backgroundColor:GRAY,
                 },
                 '&.MuiTabs-indicator':{
                     backgroundColor:'orange'

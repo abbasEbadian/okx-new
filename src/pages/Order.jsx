@@ -1,27 +1,57 @@
-import React from 'react'
-import Header from '../components/Header'
-import Styled from '@emotion/styled'
-import SidebarOrder from '../components/SubOrder/SidebarOrder'
-import ContentOrder from '../components/SubOrder/ContentOrder'
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import OpenOrders from '../components/orders/OpenOrders';
+import OrderHistory from '../components/orders/OrderHistory';
+import TradeHistory from '../components/orders/TradeHistory';
+import Header from '../components/Header';
 
-const OrederBody = Styled.div`
-    display:flex;
-    
-    height: calc(100vh - 72px);
-`
-
-function Order() {
-  return (
-    <>
-        <Header/>
-        <OrederBody>
-            <SidebarOrder/>
-            <ContentOrder/>
-        </OrederBody>
-        
-    </>
-
-  )
+function a11yProps(index) {
+  return {
+    id: `vertical-tab-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
+  };
 }
 
-export default Order
+export default function Orders() {
+  const [value, setValue] = React.useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
+  return (
+    <>
+      
+      <Box
+      sx={{ minHeight: "100vh" }}
+      className="container-fluid row gx-0"
+    >
+      <Box className='col-lg-3 d-lg-block d-none g-0' sx={{ borderRight: '1px solid', borderColor: 'divider' }}>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs example"
+          sx={{ width: "100%" }}
+        >
+          <Tab label="Open Orders" sx={{ py: 3 , maxWidth: "100%" }} {...a11yProps(0)} />
+          <Tab label="Order History" sx={{ py: 3 , maxWidth: "100%" }} {...a11yProps(1)} />
+          <Tab label="Trade History" sx={{ py: 3 , maxWidth: "100%" }} {...a11yProps(2)} />
+
+        </Tabs>
+      </Box>
+      <Box className="col-lg-9 gx-0" sx={{ height: "100vh" }}>
+        {value === 0 && <OpenOrders />}
+        {value === 1 && <OrderHistory />}
+        {value === 2 && <TradeHistory />}
+      </Box>
+    </Box>
+    </>
+    
+  );
+}

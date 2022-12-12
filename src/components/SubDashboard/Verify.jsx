@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
 import { Button } from '@mui/material';
 const VerifyBody = Styled.div`
-    padding-inline:100px;
     padding-block: 10px;
    
     .verify-link{
@@ -17,7 +16,7 @@ const VerifyBody = Styled.div`
 function Verify() {
     const CaptionName = {
         learn: "Learn more",
-        Text:"complete Verification to access Binance products and service",
+        Text:"complete Verification to access BitMNC products and service",
         verify:" Verify"
 
     };

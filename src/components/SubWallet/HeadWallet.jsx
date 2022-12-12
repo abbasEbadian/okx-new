@@ -1,57 +1,38 @@
 import React from 'react'
 import Styled from '@emotion/styled'
+import { Button } from '@mui/material';
 const HeaderWallet =Styled.div`
     display:flex;
     align-items:center;
+    flex-wrap: wrap;
     width:100%;
-    padding-inline:15px;
-    padding-block:32px;
+    padding-inline:16px 8px;
     .title-wallet{
         color:var(--white);
         font-size:24px;
-
     }
 
-    .head-wallet-title{
-        margin-right:auto;
-    }
     .spot-items{
         align-items:center;
+        justify-content: flex-end;
         .btn-spot{
-            background-color:var(--white);
+
             border:none;
-            margin-left:20px;
             border-radius:4px;
-            padding:10px;
             font-size:14px;
-            &.green{
-                background-color:var(--green)
-            }
-            &.red{
-                background-color:var(--red)
-            }
         }
     }
 `
 function HeadWallet() {
-    const CaptionName = {
-        fiatspot: "Fiat and Spot",
-        deposit:"Deposit",
-        widthdraw:"Widthdraw",
-        transitionhistory:"Transition History"
-    };
     return (
-    <HeaderWallet>
-        <div className="head-wallet-title">
-            <span className="title-wallet">
-                {CaptionName.fiatspot}
-
-            </span>
+    <HeaderWallet className='py-4 '>
+        <div className="head-wallet-title col-12 col-sm-4">
+            <span className="title-wallet"> Fiat and Spot </span>
         </div>
-        <div className="spot-items d-flex">
-            <button className='btn-spot green'>{CaptionName.deposit}</button>
-            <button className='btn-spot red'>{CaptionName.widthdraw}</button>
-            <button className='btn-spot'>{CaptionName.transitionhistory}</button>
+        <div className="spot-items d-flex col-12 col-sm-8 mt-4 mt-sm-0 ">
+            <Button className='btn-spot' variant="contained" color="light">Deposit</Button>
+            <Button className='btn-spot mx-2' variant="outlined"  color="light">Widthdraw</Button>
+            <Button className='btn-spot' variant="outlined"  color="light">Transition History</Button>
         </div>
     </HeaderWallet>
   )

@@ -49,8 +49,8 @@ const AsideWallet = Styled.div`
 `
 function SidebarWallet() {
     const CaptionName = {
-        overview: "OverView",
-        fiatspot: " Fiat and Spot"
+        overview: "",
+        fiatspot: ""
     };
     return (
     <AsideWallet>

@@ -8,6 +8,7 @@ import TradeHead from '../components/trade/TradeHead'
 import SpotTabs from '../components/trade/SpotTabs'
 import TradeFooter from '../components/trade/TradeFooter'
 import CoinPriceTabs from '../components/trade/CoinPriceTabs'
+import Header from '../components/Header'
 
 export default function Trade() {
   const [pageheight, setPageHeight] = useState('');
@@ -32,8 +33,10 @@ export default function Trade() {
   }, [pageheight, rowheight]);
 
   return (
-    <div className='container-fluid' style={{ height: pageheight }}>
-
+    <>
+      
+      <div className='container-fluid' style={{ height: pageheight }}>
+      
       <div className="row ">
         <div className="col-xxl-8 col-xl-8 col-lg-7 col-md-7 col-12 p-0   ">
           <div className="w-100 border-right">
@@ -49,11 +52,9 @@ export default function Trade() {
             <PriceList />
           </div>
           <div className="col-lg-6 col-md-6 col-12 gx-0 pricing borderbottom borderingl " style={{ height: rowheight }}>
-            <div className='d-flex justify-content-center'>
-              <Typography variant="p" component="div">
-                Trade History
-              </Typography>
-            </div>
+            <h6 className='text-start py-2 ps-2 border-bottom border-secondary'> Trade History</h6>
+               
+              
             <div>
               <CoinPriceTabs  heights={rowheight}/>
             </div>
@@ -66,7 +67,8 @@ export default function Trade() {
 
       </div>
 
-    </div>
+      </div>
+    </>
 
   )
 }

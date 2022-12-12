@@ -42,10 +42,7 @@
     padding: 0;
     box-sizing: border-box;
 }
-.App{
-    background-color: #0B0E11;
-    
-}
+
 .action-link{
     color:var(--green);
     text-decoration:none;
@@ -60,5 +57,4 @@ button.btn[disabled] {
 }
 body a{ 
     text-decoration: none !important;
-    color: inherit;
 }

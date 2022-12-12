@@ -31,7 +31,7 @@ export default function TradeFooter({height}) {
         <TabPanel>
           <Box sx={{height:"250px"}} className="d-flex justify-content-center align-items-center">
               <Typography variant="p" component="div" sx={{color:"#8c8e90"}}>
-                <Link className="logo"  to="/auth/login">Log in</Link> or <Link className='logo' to="/signup">Sign Up</Link> go to Trade
+                <Link className="logo"  to="/auth/login">Log in</Link> or <Link className='logo' to="/auth/signup">Sign Up</Link> go to Trade
               </Typography>
           </Box>
         </TabPanel>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import GradeIcon from '@mui/icons-material/Grade';
 import Styled from '@emotion/styled'
+import { Button } from '@mui/material';
 const TabsMarket = Styled.div`
     display: flex;
     align-items: center;
@@ -64,10 +65,10 @@ function TabMarket() {
         <TabsMarket className='container'>
             <div className="tab-items d-flex w-100 justify-content-between align-items-center">
                 <div className="tabs d-flex align-items-center">
-                    <button className={`tab-market-link ${activeTab==='favorites'?'active':''} d-flex align-items-center`} id="Favorite" date-className="Favorite" onClick={e=>changeActiveTab('favorites')}>
+                    <Button variant={activeTab==='favorites'?'contained':'outlined'} color={"light"} className={`fs-6 d-flex align-items-center`} id="Favorite" date-className="Favorite" onClick={e=>changeActiveTab('favorites')}>
                         <GradeIcon fontSize='small' className='me-1'/> Favorites
-                    </button>
-                    <button className={`tab-market-link ${activeTab==='all'?'active':''}`} id="Cryptos" date-className="Cryptos" onClick={e=>changeActiveTab('all')}> All Cryptos </button>
+                    </Button>
+                    <Button sx={{ml:1}}variant={activeTab==='all'?'contained':'outlined'} color={"light"} className="fs-6" id="Cryptos" date-className="Cryptos" onClick={e=>changeActiveTab('all')}> All Cryptos </Button>
                 </div>
                 <div className="search-box">
                     <SearchIcon/>

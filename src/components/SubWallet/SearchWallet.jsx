@@ -7,6 +7,7 @@ import { useState } from 'react';
 const SearchBody = Styled.div`
     display:flex;
     align-items:center;
+    flex-wrap: wrap;
     background-color:var(--gray900);
     padding-inline:15px;
     padding-bottom:16px;
@@ -41,10 +42,11 @@ const SearchBody = Styled.div`
 function SearchWallet({ search, setSearch, hide, setHide}) {
     return (
     <SearchBody>
-        <div className="search-items d-flex ">
+        <div className="search-items d-flex">
             <button className="btn-search-coin"><SearchIcon/></button>
             <input type="text" className="search-input" placeholder="Search Coin" value={search} onChange={ e => setSearch(e.target.value) } />
         </div>
+        <br className='d-block d-md-none'/>
         <HideSmallBalance hide={hide} setHide={setHide}/>
     </SearchBody>
   )

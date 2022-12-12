@@ -14,7 +14,6 @@ import { Button } from '@mui/material'
 const ContentSecurityBody = Styled.div`
     flex-basis: auto;
     flex-grow: 1;
-    background:var(--gray900);
     
 `
 function ContentSecurity() {
@@ -23,11 +22,11 @@ function ContentSecurity() {
 
   return (
     <ContentSecurityBody>
-        <HeadSecurity/>
-        <TwoFactorAuthentication setOpen={setOpen}/>
-        <AdvancedSecurity/>
-        <DevicesActivities/>
-        <Dialog
+      <HeadSecurity />
+      <TwoFactorAuthentication setOpen={setOpen} />
+      <AdvancedSecurity />
+      <DevicesActivities />
+      <Dialog
         fullScreen={false}
         open={open}
         onClose={handleClose}
@@ -38,7 +37,7 @@ function ContentSecurity() {
           {"Use Google's location service?"}
         </DialogTitle>
         <DialogContent>
-         <SecurityBinanceGoogleAuthenticatorBtn />
+          <SecurityBinanceGoogleAuthenticatorBtn />
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleClose}>

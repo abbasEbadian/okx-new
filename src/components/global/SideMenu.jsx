@@ -92,7 +92,7 @@ export default function SideMenu({open,close}) {
                     <ListItem className="logo" component={Link}  to="/auth/login" sx={buttonStyle}  onClick={close}>
                         log in
                     </ListItem>
-                    <ListItem className="logo" component={Link} to="/signup" sx={buttonStyle}  onClick={close}>
+                    <ListItem className="logo" component={Link} to="/auth/signup" sx={buttonStyle}  onClick={close}>
                     sign up
                     </ListItem>
                 </List>

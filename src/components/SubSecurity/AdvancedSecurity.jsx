@@ -3,7 +3,7 @@ import Styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 import { Button } from '@mui/material';
 const AdvancedSecurityBody = Styled.div`
-    padding-inline:100px;
+    
     margin-top:32px;
     .title-advanced-security{
         color:var(--white);
@@ -28,8 +28,6 @@ const AdvancedSecurityBody = Styled.div`
     }
     .change-remove-box{
         .change-remove-link{
-        background:var(--gray800);
-        color:var(--white300);
         text-decoration:none;
         border-radius:5px;
         min-width:80px;
@@ -42,45 +40,45 @@ const AdvancedSecurityBody = Styled.div`
 
 `
 function AdvancedSecurity() {
-    const CaptionName={
-    
-        advanced:"Advanced Security",
-        notlink:"Not linked",
-        enable:"Enable",
-        change:"change",
-        remove:"Remove",
-        loginpassword:"Login Password",
-        guide:"Login Password is used to log in to your account.",
+    const CaptionName = {
+
+        advanced: "Advanced Security",
+        notlink: "Not linked",
+        enable: "Enable",
+        change: "change",
+        remove: "Remove",
+        loginpassword: "Login Password",
+        guide: "Login Password is used to log in to your account.",
     };
     return (
-    <AdvancedSecurityBody>
-        <div className="container d-flex flex-column">
-            <span className="title-advanced-security">{CaptionName.advanced}</span>
-            <div className="advanced-security-contnet">
-                <div className="row">
-                    <div className="col-lg-7 col-12">
-                        <div className="advanced-security-items d-flex align-item-start">
-                            <div className="img-box"></div>
-                            <div className="text-advanced-security-box d-flex flex-column align-items-start">
-                            <span className="caption-advanced-security">{CaptionName.loginpassword}</span>
-                            <span className="guide-advanced-security">{CaptionName.guide}</span>
+        <AdvancedSecurityBody>
+            <div className="container d-flex flex-column">
+                <span className="title-advanced-security">{CaptionName.advanced}</span>
+                <div className="advanced-security-contnet">
+                    <div className="row">
+                        <div className="col-lg-7 col-12">
+                            <div className="advanced-security-items d-flex align-item-start">
+                                <div className="img-box"></div>
+                                <div className="text-advanced-security-box d-flex flex-column align-items-start">
+                                    <span className="caption-advanced-security">{CaptionName.loginpassword}</span>
+                                    <span className="guide-advanced-security">{CaptionName.guide}</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-lg-5 col-12">
-                        <div className="on-items d-flex justify-content-end align-items-center">
-                            <div className="change-remove-box d-flex align-item-center ">
-                                <Link className='change-remove-link'><Button >{CaptionName.change}</Button></Link>
+                        <div className="col-lg-5 col-12">
+                            <div className="on-items d-flex justify-content-end align-items-center">
+                                <div className="change-remove-box d-flex align-item-center ">
+                                    <Link className='change-remove-link'><Button  variant='outlined' color="light">{CaptionName.change}</Button></Link>
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
+
                 </div>
-            
             </div>
-        </div>
-    </AdvancedSecurityBody>
-  )
+        </AdvancedSecurityBody>
+    )
 }
 
 export default AdvancedSecurity

@@ -3,7 +3,6 @@ import Pagination from '@mui/material/Pagination';
 import Styled from '@emotion/styled'
 const PaginationBody = Styled.div`
     margin-left:auto;
-    padding-inline:15px;
     margin-block:15px;
     .MuiButtonBase-root{
         color:var(--white300);
@@ -24,8 +23,8 @@ const PaginationBody = Styled.div`
 export default function PaginationWallet() {
   return (
     <>
-    <PaginationBody className='pb-3 float-end'>
-        <Pagination count={10} shape="rounded" color='primary' />
+    <PaginationBody className='pb-3 float-end ms-ms-auto' >
+        <Pagination count={5} shape="rounded" color='primary' />
     </PaginationBody>
     </>
 

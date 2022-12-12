@@ -37,7 +37,7 @@ function Footer({ className }) {
         link4:"Give Us FaceBook",
         link5:"About us",
         link6:"Cookie perfernce",
-        binance:"binance",
+        binance:"BitMNC",
         copyright:"2022"
     };
   return (

@@ -43,7 +43,7 @@ export default function SelectNationality() {
             color='firoozeh'
               size="small"
               defaultValue={30}
-              inputProps={{
+              inputprops={{
                 name: 'age',
                 id: 'uncontrolled-native',
               }}

@@ -3,6 +3,7 @@ import Styled from '@emotion/styled'
 import Header from '../components/Header'
 import TabMarket from '../components/SubMarket/TabMarket'
 import AllCryptos from '../components/SubMarket/AllCryptos'
+import { Card } from '@mui/material'
 const MarketBody = Styled.div`
     
     .title-market{
@@ -23,17 +24,19 @@ function Market() {
    
     return (
     <>
-        <Header/>
+        
         <MarketBody>
-            
+            <Card>
+                
             <div className="container mt-lg-5">
-                <span className="title-market">Market</span>
+                <span className="title-market">BitMNC Market Watch</span>
             </div>
             <div className='market-items'>
 
                 <TabMarket/>
                 <AllCryptos/>
             </div>
+            </Card>
         </MarketBody>
     </>
   )

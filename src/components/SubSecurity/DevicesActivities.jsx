@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import AccountActivitiyRecords from '../../pages/AccountActivitiyRecords';
 import { Button } from '@mui/material';
 const DevicesActivitiesBody = Styled.div`
- padding-inline:100px;
     margin-top:32px;
     .title-device-activities{
         color:var(--white);
@@ -28,8 +27,6 @@ const DevicesActivitiesBody = Styled.div`
 
     }
     .change-remove-link{
-        background:var(--gray800);
-        color:var(--white300);
         text-decoration:none;
         border-radius:5px;
         min-width:80px;
@@ -60,7 +57,7 @@ function DevicesActivities() {
                             </div>
 
                             <Link to="/dashboard/security/device-management" className='change-remove-link ms-auto'>
-                                <Button >{CaptionName.manager}</Button>
+                                <Button variant='outlined' color="light">{CaptionName.manager}</Button>
                             </Link>
                         </div>
                     </div>
@@ -75,7 +72,7 @@ function DevicesActivities() {
                             </div>
 
                             <Link to="/dashboard/security/activity-records" className='change-remove-link ms-auto'>
-                                <Button >{CaptionName.manager}</Button>
+                                <Button variant='outlined' color="light">{CaptionName.manager}</Button>
                             </Link>
                         </div>
                     </div>

@@ -7,8 +7,11 @@ const HeadSecuritybody = Styled.div`
     display:flex;
     flex-direction:column;
     background:var(--body-color);
-    padding-inline:100px;
     padding-block:16px;
+    .main {
+        padding-bottom: 16px;
+        border-bottom: 3px solid var(--gray)
+    }
     .title-security{
         color:var(--white);
         font-size:24px;
@@ -36,7 +39,7 @@ const HeadSecuritybody = Styled.div`
 function HeadSecurity() {
     const CaptionName={
     
-        security:"Security",
+        security:"Security setting",
         factor:"Two-Factor Authentication (2FA)",
         identity:"Identity Verification",
         phishing:"Anti-Phishing Code",
@@ -46,28 +49,8 @@ function HeadSecurity() {
      };
     return (
     <HeadSecuritybody>
-        <div className="container">
+        <div className="container main">
             <span className="title-security">{CaptionName.security}</span>
-            <div className="security-content d-flex align-items-center">
-                
-                <div className="security-items d-flex align-items-center">
-                    <CheckCircleIcon fontSize='small' className='check-icone'/>
-                    <Link className='securitt-link'>{CaptionName.factor}</Link>
-                </div>
-                <div className="security-items d-flex align-items-center">
-                    <CancelIcon fontSize='small' className='cancel-icone'/>
-                    <Link className='securitt-link'>{CaptionName.identity}</Link>
-                </div>
-                <div className="security-items d-flex align-items-center">
-                    <CancelIcon fontSize='small' className='cancel-icone'/>
-                    <Link className='securitt-link'>{CaptionName.phishing}</Link>
-                </div>
-                <div className="security-items d-flex align-items-center">
-                    <CancelIcon fontSize='small' className='cancel-icone'/>
-                    <Link className='securitt-link'>{CaptionName.whitelist}</Link>
-                </div>
-
-            </div>
         </div>
     </HeadSecuritybody>
   )

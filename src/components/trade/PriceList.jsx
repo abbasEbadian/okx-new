@@ -43,9 +43,7 @@ const data2 = [
 export default function PriceList() {
   return (
     <div className="px-1 py-0" style={{height:"100%"}}>
-      <Box className="d-flex justify-content-center align-items-center">
-        <Typography>Order Book</Typography>
-      </Box>
+      <h6 className='text-start py-2 ps-2 border-bottom border-secondary'>Order Book</h6>
           <Table>
             <TableHead>
               <TableRow sx={trs}>

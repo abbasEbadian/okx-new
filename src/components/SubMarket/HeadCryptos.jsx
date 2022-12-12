@@ -2,7 +2,6 @@ import React from 'react'
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import Styled from '@emotion/styled'
 const HeaderCryptos = Styled.div`
-    background-color:var(--body-color);
     border-radius:4px;
     padding-inline:16px;
     padding-block:10px;

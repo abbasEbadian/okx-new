@@ -1,13 +1,9 @@
 import React from 'react'
-import {Routes, Route} from 'react-router-dom'
-import UplaodIDCard from '../components/SubIDVerification/SubBasicInfo/UplaodIDCard'
+import {Routes, Route, Navigate} from 'react-router-dom'
 import AccountActivitiyRecords from './AccountActivitiyRecords'
-import BasicInfo from './BasicInfo'
-import ContentSecurity from './ContentSecurity'
 import Dashboard from './Dashboard'
 import DeviceManagement from './DeviceManagement'
 import EnablePhoneNumberVerification from './EnablePhoneNumberVerification'
-import FaceRecognition from './FaceRecognition'
 import Home from './Home'
 import IDVerification from './IDVerification'
 import Login from './Login'
@@ -15,30 +11,40 @@ import Market from './Market'
 import Order from './Order'
 import Trade from './Trade'
 import PersonalVerification from './PersonalVerification'
-import PersonalVerificationFinal from './PersonalVerificationFinal'
-import SecurityBinanceGoogleAuthenticatorBtn from './SecurityBinanceGoogleAuthenticatorBtn'
 import Signup from './Signup'
 import Wallet from './Wallet'
+import { authStore } from '../api/store'
+import Verify from './Verify'
+import DepositCrypto from './DepositCrypto'
+import WithdrawCrypto from './WithdrawCrypto'
 
 function Router() {
-  return (
-        <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/auth/login' element={<Login />}/>
-            <Route path='/auth/signup' element={<Signup />}/>
-            <Route path='/market' element={<Market />}/>
-            <Route path='/trade' element={<Trade/>}/>
-            <Route path='/orders' element={<Order />}/>
-            <Route path='/wallet' element={<Wallet />}/>
-            <Route path='/dashboard' element={<Dashboard />}/>
-            <Route path='/dashboard/security' element={<Dashboard />}/>
-            <Route path='/dashboard/security/enable-phone' element={<EnablePhoneNumberVerification/>}/>
-            <Route path='/dashboard/security/activity-records' element={<AccountActivitiyRecords />}/>
-            <Route path='/dashboard/security/device-management' element={<DeviceManagement />}/>
-            <Route path='/personal-verification' element={<PersonalVerification />}/>
-            <Route path='/id-verification' element={<IDVerification />}/>
-   
-        </Routes>
+  // const store = {authenticated: true}
+  const store = authStore(s => s)
+  return (<>
+        { !store.loading?
+          <Routes>
+          <Route path='/' element={<Home />}/>
+          <Route path='/auth/login' element={store.authenticated?<Navigate replace to="/" />:<Login />}/>
+          <Route path='/auth/signup' element={store.authenticated?<Navigate replace to="/" />:<Signup />}/>
+          <Route path='/auth/verify' element={store.authenticated?<Navigate replace to="/" />:<Verify />}/>
+          <Route path='/market' element={!store.authenticated?<Navigate replace to="/" />:<Market />}/>
+          <Route path='/trade' element={!store.authenticated?<Navigate replace to="/" />:<Trade/>}/>
+          <Route path='/orders' element={!store.authenticated?<Navigate replace to="/" />:<Order />}/>
+          <Route path='/wallet' element={!store.authenticated?<Navigate replace to="/" />:<Wallet />}/>
+          <Route path='/wallet/deposit' element={!store.authenticated?<Navigate replace to="/" />:<DepositCrypto />}/>
+          <Route path='/wallet/withdraw' element={!store.authenticated?<Navigate replace to="/" />:<WithdrawCrypto />}/>
+          <Route path='/dashboard' element={!store.authenticated?<Navigate replace to="/" />:<Dashboard />}/>
+          <Route path='/dashboard/security' element={!store.authenticated?<Navigate replace to="/" />:<Dashboard />}/>
+          <Route path='/dashboard/security/enable-phone' element={!store.authenticated?<Navigate replace to="/" />:<EnablePhoneNumberVerification/>}/>
+          <Route path='/dashboard/security/activity-records' element={!store.authenticated?<Navigate replace to="/" />:<AccountActivitiyRecords />}/>
+          <Route path='/dashboard/security/device-management' element={!store.authenticated?<Navigate replace to="/" />:<DeviceManagement />}/>
+          <Route path='/personal-verification' element={!store.authenticated?<Navigate replace to="/" />:<PersonalVerification />}/>
+          <Route path='/id-verification' element={!store.authenticated?<Navigate replace to="/" />:<IDVerification />}/>
+      </Routes>: <span>Loading</span>
+        }
+        
+        </>
   )
 }
 
