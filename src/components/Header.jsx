@@ -7,8 +7,10 @@ import { useLocation, useNavigate, Link } from 'react-router-dom'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import DarkLogo from '../assets/logodark.png'
 import LightLogo from '../assets/logolight.png'
-import { authStore } from '../api/store';
+// import { authStore } from '../api/store';
+import { authStore,useThemeStore } from '../api/store';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+
 const menui = [
   { "name": "ByCrypto" },
   { "name": "Market" },
@@ -19,6 +21,7 @@ const tradeitem = [
   { "name": "Margin" },
 ]
 export default function Header() {
+  const theme = useThemeStore(s => s)
   const store = authStore(s => s)
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -183,8 +186,8 @@ export default function Header() {
               </>
           }
         </Box>
-        <IconButton>
-          <DarkMode sx={{ color: "white" }} />
+        <IconButton >
+          <DarkMode sx={{ color: "white" }}  />
         </IconButton>
         <IconButton>
           <Language sx={{ color: "white" }} />

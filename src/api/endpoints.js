@@ -1,4 +1,4 @@
-const BASE_URL = "http://api.bitmnc.com"
+const BASE_URL = "https://api.bitmnc.com"
 const _ = (url) => { return new URL(url, BASE_URL).href}
 
 
